@@ -120,10 +120,10 @@ Now, Kazu spends his days exploring the village, practicing his magic, and bring
             <div class="card lg:col-span-2">
                 <h2 class="text-2xl font-bold text-white mb-4">Gallery</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
-                    <img onclick="openModal(this.src)" src="./Images/Fiverr_ysd22_Art_001czxczxcxz.png" alt="Thumbnail 1" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
-                    <img onclick="openModal(this.src)" src="./Images/eeee.png" alt="Thumbnail 2" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
-                    <img onclick="openModal(this.src)" src="./Images/MvVc_8S0_x9.png" alt="Thumbnail 3" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
-                    <img onclick="openModal(this.src)" src="./Images/KazuHani.png" alt="Thumbnail 4" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                    <img onclick="openModal(this)" src="./Images/Fiverr_ysd22_Art_001czxczxcxz_preview.png" data-fullsrc="./Images/Fiverr_ysd22_Art_001czxczxcxz.png" alt="Thumbnail 1" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                    <img onclick="openModal(this)" src="./Images/eeee_preview.png" data-fullsrc="./Images/eeee.png" alt="Thumbnail 2" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                    <img onclick="openModal(this)" src="./Images/MvVc_8S0_x9_preview.png" data-fullsrc="./Images/MvVc_8S0_x9.png" alt="Thumbnail 3" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                    <img onclick="openModal(this)" src="./Images/KazuHani_preview.png" data-fullsrc="./Images/KazuHani.png" alt="Thumbnail 4" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
                 
 
                 </div>
@@ -182,12 +182,10 @@ Now, Kazu spends his days exploring the village, practicing his magic, and bring
         const modal = document.getElementById('galleryModal');
         const modalImage = document.getElementById('modalImage');
 
-        function openModal(src) {
+        function openModal(imgElement) {
             modal.classList.remove('hidden');
-            // The .replace() part was more relevant for placeholder images with dimensions in the URL.
-            // For your actual image files, it likely won't change the src.
-            // It's kept here for now but could be simplified to modalImage.src = src; if not needed.
-            modalImage.src = src.replace(/(\d+)x(\d+)/, '800x800'); 
+            const fullSrc = imgElement.getAttribute('data-fullsrc');
+            modalImage.src = fullSrc; 
         }
 
         function closeModal() {
