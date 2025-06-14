@@ -81,8 +81,7 @@
                 </div>
 
                 <div id="Backstory" class="tab-content">
-                    <p class="text-slate-100 leading-relaxed whitespace-pre-wrap text-base sm:text-lg">
-                        Kazu was born in a small cave nestled within the vast, icy expanse of the Arctic. His parents, both magnificent ice dragons, cherished their newborn with a love as boundless as the frozen landscape they called home. Tragically, their time as parents was cut short. When Kazu was merely a babe, his parents were slain, leaving him orphaned in the unforgiving Arctic wilderness.
+                    <p class="text-slate-100 leading-relaxed whitespace-pre-wrap text-base sm:text-lg">Kazu was born in a small cave nestled within the vast, icy expanse of the Arctic. His parents, both magnificent ice dragons, cherished their newborn with a love as boundless as the frozen landscape they called home. Tragically, their time as parents was cut short. When Kazu was merely a babe, his parents were slain, leaving him orphaned in the unforgiving Arctic wilderness.
 
 Fate, however, had other plans for the young ice dragon. A nearby village of humans discovered the abandoned Kazu and, touched by his helplessness, took him in as one of their own. Despite the inherent differences between humans and dragons, the villagers welcomed Kazu with open arms, providing him with the warmth, care, and love he so desperately needed growing up amidst the hustle and bustle of the human village, Kazu was a curious and bright child, always eager to explore the nooks and crannies of his new home. Unlike his Arctic-dwelling ancestors, Kazu discovered a love for the indoors, finding comfort and endless fascination within the four walls of the village houses. He loved nothing more than to spend his days reading scrolls, playing games, and engaging in all sorts of imaginative play with his human friends.
 
@@ -120,21 +119,14 @@ Now, Kazu spends his days exploring the village, practicing his magic, and bring
             <div class="card lg:col-span-2">
                 <h2 class="text-2xl font-bold text-white mb-4">Gallery</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
-                    <img onclick="openModal(this)" src="./Images/Fiverr_ysd22_Art_001czxczxcxz_preview.png" data-fullsrc="./Images/Fiverr_ysd22_Art_001czxczxcxz.png" alt="Thumbnail 1" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
-                    <img onclick="openModal(this)" src="./Images/eeee_preview.png" data-fullsrc="./Images/eeee.png" alt="Thumbnail 2" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
-                    <img onclick="openModal(this)" src="./Images/MvVc_8S0_x9_preview.png" data-fullsrc="./Images/MvVc_8S0_x9.png" alt="Thumbnail 3" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
-                    <img onclick="openModal(this)" src="./Images/KazuHani_preview.png" data-fullsrc="./Images/KazuHani.png" alt="Thumbnail 4" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                    <img src="images/Fiverr_ysd22_Art_001czxczxcxz.jpg" alt="Thumbnail 1" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                    <img src="images/eeee.jpg" alt="Thumbnail 2" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                    <img src="images/MvVc_8S0_x9.jpg" alt="Thumbnail 3" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                    <img src="images/KazuHani.jpg" alt="Thumbnail 4" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
                 
-
                 </div>
             </div>
         </main>
-    </div>
-
-    <!-- Modal for Gallery -->
-    <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 hidden z-50" onclick="closeModal()">
-        <img id="modalImage" src="" alt="Full size image" class="max-w-full max-h-full rounded-lg shadow-2xl" onclick="event.stopPropagation()">
-        <button class="modal-close-button absolute top-4 right-4 text-white text-4xl font-bold">&times;</button>
     </div>
 
     <script>
@@ -177,20 +169,6 @@ Now, Kazu spends his days exploring the village, practicing his magic, and bring
             }, { threshold: 0.5 }); // Trigger when 50% of the card is visible
             observer.observe(statsCard);
         });
-
-        // --- Gallery Modal ---
-        const modal = document.getElementById('galleryModal');
-        const modalImage = document.getElementById('modalImage');
-
-        function openModal(imgElement) {
-            modal.classList.remove('hidden');
-            const fullSrc = imgElement.getAttribute('data-fullsrc');
-            modalImage.src = fullSrc; 
-        }
-
-        function closeModal() {
-            modal.classList.add('hidden');
-        }
     </script>
 </body>
 </html>
