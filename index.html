@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazu Character Sheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body class="antialiased body-bg">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-7xl">
+
+        <!-- Header with Profile Picture -->
+        <header class="flex flex-col sm:flex-row items-center gap-6 mb-12">
+            <div class="flex-shrink-0">
+                <img src="images/Kazu.png" alt="Profile Picture" class="w-48 h-48 sm:w-64 sm:h-64 rounded-full shadow-lg object-cover">
+            </div>
+            <div class="text-center sm:text-left">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">Kazu Hani</h1>
+                <p class="text-lg sm:text-xl text-slate-900 mt-2">Lore and World building</p>
+                <div class="quote-box mt-4">
+                    <p class="text-base sm:text-lg italic text-slate-900 max-w-lg">
+                        "I'm basically the dragon version of Jack Frost or Elsa but you know im just a walking ice berg haha names Kazu, I don't bite... hard, unless you want me too :3 nah im fuckin with ya, check out my page if you want"
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- Core Info Card -->
+            <div class="card">
+                <h2 class="text-2xl font-bold text-white mb-4">Vitals</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="vital-box"><strong class="text-cyan-400">Pronouns:</strong> <span class="text-white">He/Him</span></div>
+                    <div class="vital-box"><strong class="text-cyan-400">Gender:</strong> <span class="text-white">Male</span></div>
+                    <div class="vital-box"><strong class="text-cyan-400">Species:</strong> <span class="text-white">Arctic Dragon</span></div>
+                    <div class="vital-box"><strong class="text-cyan-400">Age:</strong> <span class="text-white">24 years old</span></div>
+                    <div class="vital-box"><strong class="text-cyan-400">Birthday:</strong> <span class="text-white">November 9th 2068</span></div>
+                    <div class="vital-box"><strong class="text-cyan-400">Height:</strong> <span class="text-white">13'1" tall on two legs, 7'5 on all fours</span></div>
+                    <div class="vital-box"><strong class="text-cyan-400">Sexuality:</strong> <span class="text-white">Aromantic Bisexual</span></div>
+                    <div class="vital-box"><strong class="text-cyan-400">Occupation:</strong> <span class="text-white">Transportation / Newspaper Boy</span></div>
+                </div>
+            </div>
+
+            <!-- Physical Stats Card -->
+            <div id="statsCard" class="card">
+                <h2 class="text-2xl font-bold text-white mb-4">Physical Stats</h2>
+                <div class="space-y-4">
+                    <div><label class="font-semibold text-slate-300">Strength</label><div class="stat-bar-container mt-1"><div class="stat-bar" data-value="75"></div></div></div>
+                    <div><label class="font-semibold text-slate-300">Agility</label><div class="stat-bar-container mt-1"><div class="stat-bar" data-value="100"></div></div></div>
+                    <div><label class="font-semibold text-slate-300">Stamina</label><div class="stat-bar-container mt-1"><div class="stat-bar" data-value="95"></div></div></div>
+                    <div><label class="font-semibold text-slate-300">Intelligence</label><div class="stat-bar-container mt-1"><div class="stat-bar" data-value="80"></div></div></div>
+                    <div><label class="font-semibold text-slate-300">Charisma</label><div class="stat-bar-container mt-1"><div class="stat-bar" data-value="100"></div></div></div>
+                </div>
+            </div>
+
+            <!-- Tabbed Info Section -->
+            <div class="card lg:col-span-2">
+                <!-- Tab Buttons -->
+                <div class="flex border-b border-slate-700 mb-4">
+                    <button onclick="openTab(event, 'Personality')" class="tab-button active py-2 px-4 font-semibold rounded-t-lg text-slate-100">Personality</button>
+                    <button onclick="openTab(event, 'Backstory')" class="tab-button py-2 px-4 font-semibold rounded-t-lg text-slate-100">Backstory</button>
+                    <button onclick="openTab(event, 'Details')" class="tab-button py-2 px-4 font-semibold rounded-t-lg text-slate-100">Details</button>
+                </div>
+
+                <!-- Tab Content -->
+                <div id="Personality" class="tab-content active">
+                    <p class="text-slate-100 leading-relaxed text-base sm:text-lg">
+                        By nature Kazu is very playful and always likes to mess around, he lives life to the fullest and makes sure anyone and everything he cares about is loved and cherished. Although in his village he is the only dragon he has adapted to his human family and allies and see's himself more human then dragon, sometimes walking up right, cracking jokes at the bar, has custom designed clothes made for him (Kazu is popular on social media as he is the first dragon to ever have a social media presence)
+                    </p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
+                        <div class="bg-slate-700 p-3 rounded-lg text-center"><strong class="text-white">Kindness</strong></div>
+                        <div class="bg-slate-700 p-3 rounded-lg text-center"><strong class="text-white">Loayalty</strong></div>
+                        <div class="bg-slate-700 p-3 rounded-lg text-center"><strong class="text-white">Protective</strong></div>
+                    </div>
+                </div>
+
+                <div id="Backstory" class="tab-content">
+                    <p class="text-slate-100 leading-relaxed whitespace-pre-wrap text-base sm:text-lg">Kazu was born in a small cave nestled within the vast, icy expanse of the Arctic. His parents, both magnificent ice dragons, cherished their newborn with a love as boundless as the frozen landscape they called home. Tragically, their time as parents was cut short. When Kazu was merely a babe, his parents were slain, leaving him orphaned in the unforgiving Arctic wilderness.
+
+Fate, however, had other plans for the young ice dragon. A nearby village of humans discovered the abandoned Kazu and, touched by his helplessness, took him in as one of their own. Despite the inherent differences between humans and dragons, the villagers welcomed Kazu with open arms, providing him with the warmth, care, and love he so desperately needed growing up amidst the hustle and bustle of the human village, Kazu was a curious and bright child, always eager to explore the nooks and crannies of his new home. Unlike his Arctic-dwelling ancestors, Kazu discovered a love for the indoors, finding comfort and endless fascination within the four walls of the village houses. He loved nothing more than to spend his days reading scrolls, playing games, and engaging in all sorts of imaginative play with his human friends.
+
+Kazu's personality blossomed in the village. He was known for his infectious laughter, his playful antics, and his knack for finding joy in the simplest of things. He was always up for a good time, whether it was joining in a snowball fight, building snow forts, or participating in the village's many festivals and celebrations.
+
+As Kazu matured, his innate magical abilities began to manifest. He discovered he could control and manipulate ice and snow, a testament to his ice dragon lineage. This revelation sparked a deep passion within him to understand and master his powers. He practiced his magic in secret, often incorporating it into his playful antics, much to the amusement of his friends.
+
+Despite his dragon heritage, Kazu felt most at home in the human village. He loved his adoptive family and the friends he had made, and he couldn't imagine living anywhere else. The village had become his world, a place where he could be himself, a silly, fun-loving ice dragon with a heart of gold.
+
+Now, Kazu spends his days exploring the village, practicing his magic, and bringing laughter and joy to those around him. He loves soaring through the skies with the other ice dragons, engaging in playful races and mock battles. But at the end of a long day, he always returns to the warmth and comfort of his human home, where a steaming mug of hot cocoa and a cozy blanket await him.
+</p>
+                </div>
+                
+                <div id="Details" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-4">Likes & Dislikes</h3>
+                            <div class="space-y-3">
+                                <div><h4 class="font-semibold text-teal-100">Likes:</h4><ul class="list-disc list-inside text-slate-100 text-base sm:text-lg"><li>[Stargazing]</li><li>[Tinkering]</li></ul></div>
+                                <div><h4 class="font-semibold text-red-100">Dislikes:</h4><ul class="list-disc list-inside text-slate-100 text-base sm:text-lg"><li>[Loud noises]</li><li>[Being rushed]</li></ul></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-4">Abilities & Skills</h3>
+                            <ul class="list-disc list-inside text-slate-100 space-y-2 text-base sm:text-lg">
+                                <li><strong>[Skill Name]:</strong> [Description of a talent.]</li>
+                                <li><strong>[Skill Name]:</strong> [Description of a talent.]</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Card -->
+            <div class="card lg:col-span-2">
+                <h2 class="text-2xl font-bold text-white mb-4">Gallery of Kazu</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                    <img src="images/Fiverr_ysd22_Art_001czxczxcxz.jpg" alt="Thumbnail 1" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                    <img src="images/eeee.jpg" alt="Thumbnail 2" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                    <img src="images/MvVc_8S0_x9.jpg" alt="Thumbnail 3" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                    <img src="images/KazuHani.jpg" alt="Thumbnail 4" class="gallery-thumb w-full h-auto object-cover rounded-md" loading="lazy">
+                
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Disable the browser's automatic scroll restoration to ensure our manual scroll works.
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // --- Tabs ---
+        function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // --- Animated Stats on Scroll ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll to the top of the page on load/refresh
+            window.scrollTo(0, 0);
+
+            const statsCard = document.getElementById('statsCard');
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    const statBars = document.querySelectorAll('.stat-bar');
+                    statBars.forEach(bar => {
+                        const value = bar.getAttribute('data-value');
+                        bar.style.width = value + '%';
+                        bar.innerText = value + '%';
+                    });
+                    observer.unobserve(statsCard); // Animate only once
+                }
+            }, { threshold: 0.5 }); // Trigger when 50% of the card is visible
+            observer.observe(statsCard);
+        });
+    </script>
+</body>
+</html>
