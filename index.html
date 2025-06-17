@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazu's Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="gradient-bg text-white min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
+
+    <!-- Main container card -->
+    <div class="w-full max-w-4xl bg-black bg-opacity-40 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden md:flex">
+        
+        <!-- Left Side: Image -->
+        <!-- To change the image, replace the `src` URL. -->
+        <div id="profileImageContainer" class="md:w-1/3">
+            <img 
+                src="images/Art_001.png" 
+                alt="A portrait of Kazu" 
+                class="w-full h-auto md:h-full object-cover"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x900/2c3e50/f39c12?text=Image+Not+Found';"
+            >
+        </div>
+
+        <!-- Toggle Content Button (Mobile Only) -->
+        <button id="toggleContentButton" class="block md:hidden w-full p-3 bg-amber-500 text-white text-center font-semibold hover:bg-amber-600 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-300">
+            Focus on Info
+        </button>
+
+        <!-- Right Side: Information -->
+        <div id="profileContentContainer" class="md:w-2/3 px-8 pb-8 pt-16 md:p-12 overflow-y-auto" style="max-height: 90vh;">
+            
+            <!-- Header: OC Name -->
+            <header class="mb-8 text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">
+                    Kazu
+                </h1>
+                <p class="text-gray-300 mt-2 text-lg">Character Information</p>
+            </header>
+
+            <!-- Details Section -->
+            <!-- To edit the info, change the text inside the `dd` tags. -->
+            <div class="space-y-8">
+                
+                <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6">
+                    <div class="bg-white/10 p-4 rounded-lg text-center">
+                        <dt class="text-sm font-medium text-gray-400">Pronouns</dt>
+                        <dd class="mt-1 text-xl font-semibold text-white">He/Him</dd>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg text-center">
+                        <dt class="text-sm font-medium text-gray-400">Gender</dt>
+                        <dd class="mt-1 text-xl font-semibold text-white">Male</dd>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg text-center">
+                        <dt class="text-sm font-medium text-gray-400">Species</dt>
+                        <dd class="mt-1 text-xl font-semibold text-white">Arctic Dragon</dd>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg text-center">
+                        <dt class="text-sm font-medium text-gray-400">Age</dt>
+                        <dd class="mt-1 text-xl font-semibold text-white">24</dd>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg text-center">
+                        <dt class="text-sm font-medium text-gray-400">Birthday</dt>
+                        <dd class="mt-1 text-xl font-semibold text-white">November 9th</dd>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg text-center">
+                        <dt class="text-sm font-medium text-gray-400">Height</dt>
+                        <dd class="mt-1 text-xl font-semibold text-white">9'1</dd>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg text-center">
+                        <dt class="text-sm font-medium text-gray-400">Sexuality</dt>
+                        <dd class="mt-1 text-xl font-semibold text-white">Aromantic Straight</dd>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg text-center">
+                        <dt class="text-sm font-medium text-gray-400">Occupation</dt>
+                        <dd class="mt-1 text-xl font-semibold text-white">VIP Transportation / Delivery Serivce</dd>
+                    </div>
+                </dl>
+
+                <!-- About Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-amber-400 border-b-2 border-amber-400/30 pb-2 mb-4">About Kazu</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white/10 p-4 rounded-lg">
+                            <h3 class="font-semibold text-lg mb-2">Personality</h3>
+                            <p class="text-gray-300">Most of the humans are suprised by this but i can be flirtatious (when i want too) and approachable, got a job for me? i'll never turn down a task or job to do if you are tight with me. loyal like a pet dog to my awesome parents and friends both human and dragon cause i dont discrimate hun, I would say i am very humble and emotionally mature (my mom says this about me but she is just being a softie so take it with a grain of salt), you can probably tell already i dont take shit seriously and you are already cool in my books by reading my about page, love ya x</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-lg">
+                            <h3 class="font-semibold text-lg mb-2">Likes</h3>
+                            <p class="text-gray-300">Alone time in his room listening to music and browsing the internet on his iPad, Boba Coffee (Iced), Hot bowl of ramen, hugs, being praised by the humans, heavy snow days, using his magic, playing pranks, teasing, flirty teasing (platonic), being a goofball, Showers 🥵, Hair products / conditioner / body washer (this bod don't wash itself) </p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-lg">
+                            <h3 class="font-semibold text-lg mb-2">Dislikes</h3>
+                            <p class="text-gray-300">Jeffrey 😡</p>
+                        </div>
+                         <div class="bg-white/10 p-4 rounded-lg">
+                            <h3 class="font-semibold text-lg mb-2">Backstory</h3>
+                            <p class="text-gray-300">It’s funny, I can barely remember my first home. I just get these fuzzy flashes of a small, quiet cave somewhere out in the endless ice. My human parents filled in the rest of the story for me. They said I was taken—kidnapped by a pair of dark dragons who just vanished into the cold. Crazy, right? But it doesn't really matter. Their warmth and their love are the truest things I know. Although i would like to know who my real parents are maybe it’s for the best that i stay ignorant to the truth
+
+But I guess fate, or whatever you want to call it, had other plans. Some people from the village nearby found me. Just a little dragonling, shivering out there all alone. They could have been scared, but they weren't. They were... kind. They brought me back with them, and this noisy, warm village became my home. I got a family out of it. I found love again when I thought it was gone for good.
+
+I know it’s probably weird for an ice dragon, but I love being indoors. I always have. Growing up here was one big adventure, exploring all the weird corners of everyone's houses. I'd spend whole days just reading scrolls, messing around playing games with my friends, and just making up stories in my head. Everyone says my laugh is contagious. I guess I'm just good at finding something fun in everything, you know? A big festival, a snowball fight... it's all good. I even have a decent following on social media, apparently im the only dragon in the world to actually have some sort of social media presence so i did not even have to try to get followers.
+
+The dragon stuff like my magic started showing up as I got older. One day, I realized I could control ice and snow like full on ice manipulation, It’s weird because it felt so natural, like meeting a part of myself I never knew was there. I got obsessed and got good at it. I am still practising in secret mostly, my close humans friends know and my dragon friends know and have no clue how they figured it out but oh well. 
+
+Even with dragon blood, this is my place. This village. It's not just a place I live; it's my home. My family's here, my friends are here. It's the only place I can just be... me. A goofy, fun-loving average sized arctic dragon who really, really loves the people who took him in.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-amber-400 border-b-2 border-amber-400/30 pb-2 mb-4">Gallery</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <!-- Gallery Item 1 -->
+                        <div class="bg-white/10 p-1 rounded-lg aspect-square">
+                            <img src="images/KazuHani1.png" alt="Description of KazuHani1" class="w-full h-full object-cover rounded-md" loading="lazy">
+                        </div>
+                        <!-- Gallery Item 2 -->
+                        <div class="bg-white/10 p-1 rounded-lg aspect-square">
+                            <img src="images/KazuWoB.png" alt="Description of KazuWoB" class="w-full h-full object-cover rounded-md" loading="lazy">
+                        </div>
+                        <!-- Gallery Item 3 -->
+                        <div class="bg-white/10 p-1 rounded-lg aspect-square">
+                            <img src="images/transparentboy.png" alt="Description of transparentboy" class="w-full h-full object-cover rounded-md" loading="lazy">
+                        </div>
+                        <!-- Gallery Item 4 -->
+                        <div class="bg-white/10 p-1 rounded-lg aspect-square">
+                            <img src="images/Fiverr_rhysd22_Art_001.png" alt="Description of Fiverr_rhysd22_Art_001" class="w-full h-full object-cover rounded-md" loading="lazy">
+                        </div>
+                        <!-- Add more gallery items as needed -->
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Footer -->
+            <footer class="mt-10 text-center text-gray-400 text-sm">
+                <p>Character Profile &copy; <span id="currentYear"></span></p>
+            </footer>
+        </div>
+        
+    </div>
+
+    <!-- Image Preview Modal -->
+    <div id="imagePreviewModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 lg:p-8 z-50 hidden opacity-0 transition-opacity duration-300 ease-in-out">
+        <div id="modalContent" class="bg-gray-900 bg-opacity-80 p-2 sm:p-4 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] relative scale-95 transition-transform duration-300 ease-in-out">
+            <img id="modalImage" src="" alt="Preview" class="max-w-full max-h-[calc(90vh-4rem)] object-contain rounded-lg mx-auto block">
+            <button id="closeModalButton" title="Close preview" class="absolute top-2 right-2 sm:top-3 sm:right-3 text-gray-300 hover:text-white bg-black bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-colors z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Automatically update the year in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Image Preview Modal Logic
+        const modal = document.getElementById('imagePreviewModal');
+        const modalContent = document.getElementById('modalContent'); // For scaling
+        const modalImage = document.getElementById('modalImage');
+        const closeModalButton = document.getElementById('closeModalButton');
+
+        // Select the gallery item containers (the divs with aspect-square)
+        // The selector targets divs with 'aspect-square' class that are direct children of the gallery grid
+        const galleryItemContainers = document.querySelectorAll('.grid.grid-cols-2.sm\\:grid-cols-3.gap-4 > div.aspect-square');
+
+        function openModal(imgElementSrc, imgElementAlt) {
+            modalImage.src = imgElementSrc;
+            modalImage.alt = imgElementAlt; // Set alt text for accessibility
+            modal.classList.remove('hidden');
+            
+            // Force reflow to ensure 'hidden' removal is processed before adding transition classes
+            void modal.offsetWidth; 
+            
+            modal.classList.remove('opacity-0');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling when modal is open
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            // Wait for transitions to finish before hiding and clearing
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modalImage.src = ""; // Clear image src
+                modalImage.alt = ""; // Clear alt text
+                document.body.style.overflow = ''; // Restore background scrolling
+            }, 300); // This duration should match your longest transition (opacity or transform)
+        }
+
+        galleryItemContainers.forEach(container => {
+            container.style.cursor = 'pointer'; // Indicate items are clickable
+            const img = container.querySelector('img');
+            if (img) {
+                container.addEventListener('click', function() {
+                    openModal(img.src, img.alt);
+                });
+            }
+        });
+
+        closeModalButton.addEventListener('click', closeModal);
+
+        // Close modal when clicking on the backdrop
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) { // Check if the click is on the modal backdrop itself
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Toggle Profile Image Visibility on Mobile
+        const toggleContentButton = document.getElementById('toggleContentButton');
+        const profileImageContainer = document.getElementById('profileImageContainer');
+        // const profileContentContainer = document.getElementById('profileContentContainer'); // Available if needed for other interactions
+
+        if (toggleContentButton && profileImageContainer) {
+            toggleContentButton.addEventListener('click', () => {
+                // Toggle the 'hidden' class on the image container
+                const isImageNowHidden = profileImageContainer.classList.toggle('hidden');
+
+                if (isImageNowHidden) {
+                    toggleContentButton.textContent = 'Show Profile Picture';
+                    // Scroll the button (which is now effectively the top of the content) into view
+                    try {
+                        toggleContentButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } catch (e) {
+                        // Fallback for older browsers or environments where smooth scroll might not be supported
+                        toggleContentButton.scrollIntoView();
+                    }
+                } else {
+                    toggleContentButton.textContent = 'Focus on Info';
+                    // Optional: If you want to scroll back to the image when it reappears
+                    // profileImageContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
