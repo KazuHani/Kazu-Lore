@@ -1,11 +1,17 @@
  body {
             font-family: 'Inter', sans-serif;
+            /* Ensure body starts transparent for the animation */
+            opacity: 0;
+            animation: fadeInPage 1s ease forwards;
         }
         /* Simple gradient background animation */
         .gradient-bg {
+            /* If this class is applied to the body, its 'animation' shorthand property
+               will override the 'animation' property from the 'body' selector due to higher specificity.
+               To ensure the body fades in, we must include 'fadeInPage' here as well. */
             background: linear-gradient(-45deg, #2c3e50, #34495e, #2c2c54, #474787);
             background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            animation: fadeInPage 1s ease forwards, gradient 15s ease infinite;
         }
 
         @keyframes gradient {
@@ -13,3 +19,16 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+
+        /* Keyframes for the page load fade-in animation */
+        @keyframes fadeInPage {
+            0% {
+                opacity: 0;
+                transform: translateY(20px); /* Start 20px down */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);    /* End at original position */
+            }
+        }
+       
