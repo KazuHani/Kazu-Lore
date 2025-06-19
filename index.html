@@ -115,19 +115,19 @@ Even with dragon blood, this is my place. This village. It's not just a place I 
                     <h2 class="text-2xl font-bold text-amber-400 border-b-2 border-amber-400/30 pb-2 mb-4">Gallery</h2>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                         <!-- Gallery Item 1 -->
-                        <div class="bg-white/10 p-1 rounded-lg aspect-square">
+                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square">
                             <img src="images/KazuHani1.png" alt="Description of KazuHani1" class="w-full h-full object-cover rounded-md" loading="lazy">
                         </div>
                         <!-- Gallery Item 2 -->
-                        <div class="bg-white/10 p-1 rounded-lg aspect-square">
+                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square">
                             <img src="images/KazuWoB.png" alt="Description of KazuWoB" class="w-full h-full object-cover rounded-md" loading="lazy">
                         </div>
                         <!-- Gallery Item 3 -->
-                        <div class="bg-white/10 p-1 rounded-lg aspect-square">
+                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square">
                             <img src="images/transparentboy.png" alt="Description of transparentboy" class="w-full h-full object-cover rounded-md" loading="lazy">
                         </div>
                         <!-- Gallery Item 4 -->
-                        <div class="bg-white/10 p-1 rounded-lg aspect-square">
+                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square">
                             <img src="images/Fiverr_rhysd22_Art_001.png" alt="Description of Fiverr_rhysd22_Art_001" class="w-full h-full object-cover rounded-md" loading="lazy">
                         </div>
                         <!-- Add more gallery items as needed -->
@@ -157,107 +157,144 @@ Even with dragon blood, this is my place. This village. It's not just a place I 
     </div>
 
     <script>
-        // Automatically update the year in the footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Image Preview Modal Logic
-        const modal = document.getElementById('imagePreviewModal');
-        const modalContent = document.getElementById('modalContent'); // For scaling
-        const modalImage = document.getElementById('modalImage');
-        const closeModalButton = document.getElementById('closeModalButton');
-
-        // Select the gallery item containers (the divs with aspect-square)
-        // The selector targets divs with 'aspect-square' class that are direct children of the gallery grid
-        const galleryItemContainers = document.querySelectorAll('.grid.grid-cols-2.sm\\:grid-cols-3.gap-4 > div.aspect-square');
-
-        function openModal(imgElementSrc, imgElementAlt) {
-            modalImage.src = imgElementSrc;
-            modalImage.alt = imgElementAlt; // Set alt text for accessibility
-            modal.classList.remove('hidden');
-            
-            // Force reflow to ensure 'hidden' removal is processed before adding transition classes
-            void modal.offsetWidth; 
-            
-            modal.classList.remove('opacity-0');
-            modalContent.classList.remove('scale-95');
-            modalContent.classList.add('scale-100');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling when modal is open
-        }
-
-        function closeModal() {
-            modal.classList.add('opacity-0');
-            modalContent.classList.remove('scale-100');
-            modalContent.classList.add('scale-95');
-            
-            // Wait for transitions to finish before hiding and clearing
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modalImage.src = ""; // Clear image src
-                modalImage.alt = ""; // Clear alt text
-                document.body.style.overflow = ''; // Restore background scrolling
-            }, 300); // This duration should match your longest transition (opacity or transform)
-        }
-
-        galleryItemContainers.forEach(container => {
-            container.style.cursor = 'pointer'; // Indicate items are clickable
-            const img = container.querySelector('img');
-            if (img) {
-                container.addEventListener('click', function() {
-                    openModal(img.src, img.alt);
-                });
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded and parsed.');
+            // Automatically update the year in the footer
+            const currentYearEl = document.getElementById('currentYear');
+            if (currentYearEl) {
+                currentYearEl.textContent = new Date().getFullYear();
             }
-        });
 
-        closeModalButton.addEventListener('click', closeModal);
+            // Image Preview Modal Logic
+            const modal = document.getElementById('imagePreviewModal');
+            const modalContent = document.getElementById('modalContent');
+            const modalImage = document.getElementById('modalImage');
+            const closeModalButton = document.getElementById('closeModalButton');
 
-        // Close modal when clicking on the backdrop
-        modal.addEventListener('click', function(event) {
-            if (event.target === modal) { // Check if the click is on the modal backdrop itself
-                closeModal();
-            }
-        });
+            console.log('Modal elements:', { modal, modalContent, modalImage, closeModalButton });
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeModal();
-            }
-        });
+            // Use the new, more robust selector for gallery items
+            const galleryItemContainers = document.querySelectorAll('.gallery-image-item');
+            console.log(`Found ${galleryItemContainers.length} gallery item containers.`);
 
-        // Toggle Profile Image Visibility on Mobile
-        const toggleContentButton = document.getElementById('toggleContentButton');
-        const profileImageContainer = document.getElementById('profileImageContainer');
-        // const profileContentContainer = document.getElementById('profileContentContainer'); // Available if needed for other interactions
-
-        if (toggleContentButton && profileImageContainer) {
-            toggleContentButton.addEventListener('click', () => {
-                // Toggle the 'hidden' class on the image container
-                const isImageNowHidden = profileImageContainer.classList.toggle('hidden');
-
-                if (isImageNowHidden) {
-                    toggleContentButton.textContent = 'Show Profile Picture';
-                    // Scroll the button (which is now effectively the top of the content) into view
-                    try {
-                        toggleContentButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    } catch (e) {
-                        // Fallback for older browsers or environments where smooth scroll might not be supported
-                        toggleContentButton.scrollIntoView();
-                    }
-                } else {
-                    toggleContentButton.textContent = 'Focus on Info';
-                    // Optional: If you want to scroll back to the image when it reappears
-                    // profileImageContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            function openModal(imgElementSrc, imgElementAlt) {
+                console.log('openModal called with src:', imgElementSrc);
+                if (!modal || !modalImage || !modalContent) {
+                    console.error('Modal elements not found for openModal. Cannot open.');
+                    return;
                 }
-            });
-        }
+                console.log('Setting modal image src and alt.');
+                modalImage.src = imgElementSrc;
+                modalImage.alt = imgElementAlt;
+                modal.classList.remove('hidden');
+                
+                void modal.offsetWidth; // Force reflow for transition
+                
+                modal.classList.remove('opacity-0');
+                console.log('Modal classes after removing hidden and opacity-0:', modal.className);
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+                console.log('Modal content classes after scale adjustment:', modalContent.className);
+                document.body.style.overflow = 'hidden';
+                console.log('Body overflow set to hidden.');
+            }
+
+            function closeModal() {
+                console.log('closeModal called.');
+                if (!modal || !modalImage || !modalContent) {
+                    console.error('Modal elements not found for closeModal. Cannot close.');
+                    return;
+                }
+                modal.classList.add('opacity-0');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+                
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modalImage.src = ""; 
+                    modalImage.alt = ""; 
+                    document.body.style.overflow = ''; 
+                    console.log('Modal hidden and body overflow restored after timeout.');
+                }, 300); // Match transition duration
+            }
+
+            if (galleryItemContainers.length > 0) {
+                galleryItemContainers.forEach(container => {
+                    console.log('Processing gallery item container:', container);
+                    container.style.cursor = 'pointer'; 
+                    const img = container.querySelector('img');
+                    if (img) {
+                        console.log('Found img tag, attaching click listener:', img);
+                        container.addEventListener('click', function() {
+                            console.log('Gallery item clicked. Image src:', img.src, 'Image alt:', img.alt);
+                            openModal(img.src, img.alt);
+                        });
+                    } else {
+                        console.warn('Gallery item container found, but no img tag inside:', container);
+                    }
+                });
+            } else {
+                console.warn("No elements with class 'gallery-image-item' found. Double-check HTML class names.");
+            }
+
+            if (closeModalButton) {
+                console.log('Attaching click listener to close button.');
+                closeModalButton.addEventListener('click', closeModal);
+            } else {
+                console.warn('Close modal button (ID: closeModalButton) not found.');
+            }
+
+            if (modal) {
+                console.log('Attaching click listener to modal backdrop and keydown listener for Escape key.');
+                modal.addEventListener('click', function(event) {
+                    if (event.target === modal) { 
+                        closeModal();
+                    }
+                });
+
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                        closeModal();
+                    }
+                });
+            } else {
+                console.warn('Image preview modal (ID: imagePreviewModal) element not found.');
+            }
+
+            // Toggle Profile Image Visibility on Mobile
+            console.log('Setting up toggle for profile image visibility (if button exists).');
+            // Note: The button with id="toggleContentButton" is not present in the current HTML.
+            // This logic will not activate unless the button is added to the HTML.
+            const toggleContentButton = document.getElementById('toggleContentButton');
+            const profileImageContainer = document.getElementById('profileImageContainer');
+
+            if (toggleContentButton && profileImageContainer) {
+                toggleContentButton.addEventListener('click', () => {
+                    const isImageNowHidden = profileImageContainer.classList.toggle('hidden');
+                    if (isImageNowHidden) {
+                        toggleContentButton.textContent = 'Show Profile Picture';
+                        try {
+                            toggleContentButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        } catch (e) {
+                            toggleContentButton.scrollIntoView();
+                        }
+                    } else {
+                        toggleContentButton.textContent = 'Focus on Info';
+                    }
+                });
+            } else {
+                if (!toggleContentButton) console.log("Toggle button (ID: toggleContentButton) not found.");
+                if (!profileImageContainer) console.log("Profile image container (ID: profileImageContainer) not found.");
+            }
+
+            // Scroll to top logic (from the original second script block)
+            console.log('Setting timeout for scroll to top.');
+            // setTimeout(function() {
+            //     console.log('Executing scroll to top.');
+            //     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+            // }, 1200); // Temporarily commented out to reduce console noise during modal debugging
+        });
     </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        }, 1200); // 1200 milliseconds = 1.2 seconds
-    });
-</script>
 
 </body>
 </html>
