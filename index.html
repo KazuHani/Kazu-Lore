@@ -11,6 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/Art_001.png">
     <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        /* Animation classes for scroll-triggered fade-in effect */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body class="gradient-bg text-white min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
 
@@ -19,7 +31,7 @@
         
         <!-- Profile Image -->
         <!-- To change the image, replace the `src` URL. -->
-        <div id="profileImageContainer" class="px-4 pt-8 sm:pt-10 md:pt-12">
+        <div id="profileImageContainer" class="px-4 pt-8 sm:pt-10 md:pt-12 scroll-animate">
             <img 
                 src="images/Art_001.png" 
                 alt="A portrait of Kazu" 
@@ -33,7 +45,7 @@
         <div id="profileContentContainer" class="px-6 sm:px-8 pb-8 pt-6 sm:pt-8 md:px-12 md:pb-12 md:pt-8">
             
             <!-- Header: OC Name -->
-            <header class="mb-8 text-center">
+            <header class="mb-8 text-center scroll-animate">
                 <h1 class="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">
                     Kazu
                 </h1>
@@ -44,7 +56,7 @@
             <!-- To edit the info, change the text inside the `dd` tags. -->
             <div class="space-y-8">
                 
-                <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6">
+                <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 scroll-animate">
                     <div class="bg-white/10 p-4 rounded-lg text-center">
                         <dt class="text-sm font-medium text-gray-400">Pronouns</dt>
                         <dd class="mt-1 text-xl font-semibold text-white">He/Him</dd>
@@ -80,7 +92,7 @@
                 </dl>
 
                 <!-- About Section -->
-                <div>
+                <div class="scroll-animate">
                     <h2 class="text-2xl font-bold text-amber-400 border-b-2 border-amber-400/30 pb-2 mb-4">About Kazu</h2>
                     <div class="space-y-4">
                         <div class="bg-white/10 p-4 rounded-lg">
@@ -111,23 +123,23 @@ Even with dragon blood, this is my place. This village. It's not just a place I 
                 </div>
 
                 <!-- Gallery Section -->
-                <div>
+                <div class="scroll-animate">
                     <h2 class="text-2xl font-bold text-amber-400 border-b-2 border-amber-400/30 pb-2 mb-4">Gallery</h2>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                         <!-- Gallery Item 1 -->
-                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square">
+                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square cursor-pointer hover:bg-white/20 transition-colors">
                             <img src="images/KazuHani1.png" alt="Description of KazuHani1" class="w-full h-full object-cover rounded-md" loading="lazy">
                         </div>
                         <!-- Gallery Item 2 -->
-                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square">
+                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square cursor-pointer hover:bg-white/20 transition-colors">
                             <img src="images/KazuWoB.png" alt="Description of KazuWoB" class="w-full h-full object-cover rounded-md" loading="lazy">
                         </div>
                         <!-- Gallery Item 3 -->
-                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square">
+                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square cursor-pointer hover:bg-white/20 transition-colors">
                             <img src="images/transparentboy.png" alt="Description of transparentboy" class="w-full h-full object-cover rounded-md" loading="lazy">
                         </div>
                         <!-- Gallery Item 4 -->
-                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square">
+                        <div class="gallery-image-item bg-white/10 p-1 rounded-lg aspect-square cursor-pointer hover:bg-white/20 transition-colors">
                             <img src="images/Fiverr_rhysd22_Art_001.png" alt="Description of Fiverr_rhysd22_Art_001" class="w-full h-full object-cover rounded-md" loading="lazy">
                         </div>
                         <!-- Add more gallery items as needed -->
@@ -144,13 +156,13 @@ Even with dragon blood, this is my place. This village. It's not just a place I 
         
     </div>
 
-    <!-- Image Preview Modal -->
-    <div id="imagePreviewModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 lg:p-8 z-50 hidden opacity-0 transition-opacity duration-300 ease-in-out">
-        <div id="modalContent" class="bg-gray-900 bg-opacity-80 p-2 sm:p-4 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] relative scale-95 transition-transform duration-300 ease-in-out">
-            <img id="modalImage" src="" alt="Preview" class="max-w-full max-h-[calc(90vh-4rem)] object-contain rounded-lg mx-auto block">
-            <button id="closeModalButton" title="Close preview" class="absolute top-2 right-2 sm:top-3 sm:right-3 text-gray-300 hover:text-white bg-black bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-colors z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden opacity-0 transition-opacity duration-300 ease-in-out">
+        <div class="relative">
+            <img id="modalImage" src="" alt="Expanded gallery image" class="w-auto h-auto max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl">
+            <button id="closeModal" aria-label="Close image view" class="absolute -top-4 -right-4 text-white bg-black bg-opacity-70 rounded-full p-2 hover:bg-opacity-100 transition-colors focus:outline-none focus:ring-2 focus:ring-white">
+                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
         </div>
@@ -163,102 +175,6 @@ Even with dragon blood, this is my place. This village. It's not just a place I 
             const currentYearEl = document.getElementById('currentYear');
             if (currentYearEl) {
                 currentYearEl.textContent = new Date().getFullYear();
-            }
-
-            // Image Preview Modal Logic
-            const modal = document.getElementById('imagePreviewModal');
-            const modalContent = document.getElementById('modalContent');
-            const modalImage = document.getElementById('modalImage');
-            const closeModalButton = document.getElementById('closeModalButton');
-
-            console.log('Modal elements:', { modal, modalContent, modalImage, closeModalButton });
-
-            // Use the new, more robust selector for gallery items
-            const galleryItemContainers = document.querySelectorAll('.gallery-image-item');
-            console.log(`Found ${galleryItemContainers.length} gallery item containers.`);
-
-            function openModal(imgElementSrc, imgElementAlt) {
-                console.log('openModal called with src:', imgElementSrc);
-                if (!modal || !modalImage || !modalContent) {
-                    console.error('Modal elements not found for openModal. Cannot open.');
-                    return;
-                }
-                console.log('Setting modal image src and alt.');
-                modalImage.src = imgElementSrc;
-                modalImage.alt = imgElementAlt;
-                modal.classList.remove('hidden');
-                
-                void modal.offsetWidth; // Force reflow for transition
-                
-                modal.classList.remove('opacity-0');
-                console.log('Modal classes after removing hidden and opacity-0:', modal.className);
-                modalContent.classList.remove('scale-95');
-                modalContent.classList.add('scale-100');
-                console.log('Modal content classes after scale adjustment:', modalContent.className);
-                document.body.style.overflow = 'hidden';
-                console.log('Body overflow set to hidden.');
-            }
-
-            function closeModal() {
-                console.log('closeModal called.');
-                if (!modal || !modalImage || !modalContent) {
-                    console.error('Modal elements not found for closeModal. Cannot close.');
-                    return;
-                }
-                modal.classList.add('opacity-0');
-                modalContent.classList.remove('scale-100');
-                modalContent.classList.add('scale-95');
-                
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    modalImage.src = ""; 
-                    modalImage.alt = ""; 
-                    document.body.style.overflow = ''; 
-                    console.log('Modal hidden and body overflow restored after timeout.');
-                }, 300); // Match transition duration
-            }
-
-            if (galleryItemContainers.length > 0) {
-                galleryItemContainers.forEach(container => {
-                    console.log('Processing gallery item container:', container);
-                    container.style.cursor = 'pointer'; 
-                    const img = container.querySelector('img');
-                    if (img) {
-                        console.log('Found img tag, attaching click listener:', img);
-                        container.addEventListener('click', function() {
-                            console.log('Gallery item clicked. Image src:', img.src, 'Image alt:', img.alt);
-                            openModal(img.src, img.alt);
-                        });
-                    } else {
-                        console.warn('Gallery item container found, but no img tag inside:', container);
-                    }
-                });
-            } else {
-                console.warn("No elements with class 'gallery-image-item' found. Double-check HTML class names.");
-            }
-
-            if (closeModalButton) {
-                console.log('Attaching click listener to close button.');
-                closeModalButton.addEventListener('click', closeModal);
-            } else {
-                console.warn('Close modal button (ID: closeModalButton) not found.');
-            }
-
-            if (modal) {
-                console.log('Attaching click listener to modal backdrop and keydown listener for Escape key.');
-                modal.addEventListener('click', function(event) {
-                    if (event.target === modal) { 
-                        closeModal();
-                    }
-                });
-
-                document.addEventListener('keydown', function(event) {
-                    if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
-                        closeModal();
-                    }
-                });
-            } else {
-                console.warn('Image preview modal (ID: imagePreviewModal) element not found.');
             }
 
             // Toggle Profile Image Visibility on Mobile
@@ -287,12 +203,93 @@ Even with dragon blood, this is my place. This village. It's not just a place I 
                 if (!profileImageContainer) console.log("Profile image container (ID: profileImageContainer) not found.");
             }
 
+            // Scroll Animation Logic
+            console.log('Setting up scroll animations.');
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+
+            if (animatedElements.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                        } else {
+                            // This makes the animation replay on scroll up/down
+                            entry.target.classList.remove('is-visible');
+                        }
+                    });
+                }, {
+                    rootMargin: '0px',
+                    threshold: 0.1 // Trigger when 10% of the element is visible
+                });
+
+                animatedElements.forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
             // Scroll to top logic (from the original second script block)
             console.log('Setting timeout for scroll to top.');
             // setTimeout(function() {
             //     console.log('Executing scroll to top.');
             //     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
             // }, 1200); // Temporarily commented out to reduce console noise during modal debugging
+
+            // Image Modal Logic
+            console.log('Setting up image modal logic.');
+            const imageModal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModalBtn = document.getElementById('closeModal');
+            const galleryItems = document.querySelectorAll('.gallery-image-item');
+
+            if (imageModal && modalImage && closeModalBtn && galleryItems.length > 0) {
+                const openModal = (imgSrc, imgAlt) => {
+                    modalImage.src = imgSrc;
+                    modalImage.alt = imgAlt;
+                    imageModal.classList.remove('hidden');
+                    document.body.classList.add('overflow-hidden'); // Prevent background scrolling
+                    // Use requestAnimationFrame to ensure the transition is applied after display property changes
+                    requestAnimationFrame(() => {
+                        imageModal.classList.remove('opacity-0');
+                    });
+                };
+
+                const closeModalHandler = () => {
+                    document.body.classList.remove('overflow-hidden'); // Re-enable scrolling immediately for better responsiveness.
+                    imageModal.classList.add('opacity-0');
+                    // Wait for the transition to finish before hiding the element
+                    imageModal.addEventListener('transitionend', () => {
+                        // This check prevents a race condition if another image is opened quickly.
+                        if (imageModal.classList.contains('opacity-0')) {
+                            imageModal.classList.add('hidden');
+                        }
+                    }, { once: true });
+                };
+
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        const img = item.querySelector('img');
+                        if (img) {
+                            openModal(img.src, img.alt);
+                        }
+                    });
+                });
+
+                closeModalBtn.addEventListener('click', closeModalHandler);
+
+                // Close modal by clicking on the background overlay
+                imageModal.addEventListener('click', (e) => {
+                    if (e.target === imageModal) {
+                        closeModalHandler();
+                    }
+                });
+
+                // Close modal with the Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !imageModal.classList.contains('hidden')) {
+                        closeModalHandler();
+                    }
+                });
+            }
         });
     </script>
 
