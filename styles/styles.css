@@ -1,4 +1,4 @@
- body {
+body {
             font-family: 'Inter', sans-serif;
             /* Ensure body starts transparent for the animation */
             opacity: 0;
@@ -9,15 +9,21 @@
             /* If this class is applied to the body, its 'animation' shorthand property
                will override the 'animation' property from the 'body' selector due to higher specificity.
                To ensure the body fades in, we must include 'fadeInPage' here as well. */
-            background: linear-gradient(-45deg, #2c3e50, #34495e, #2c2c54, #474787);
-            background-size: 400% 400%;
-            animation: fadeInPage 1s ease forwards, gradient 15s ease infinite;
+            background: linear-gradient(45deg, #f39c12, #e74c3c, #9b59b6, #3498db);
+            background-size: 600% 600%;
+            animation: fadeInPage 1s ease forwards, gradient 10s ease infinite;
         }
 
         @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Keyframes for the page load fade-in animation */
@@ -31,4 +37,3 @@
                 transform: translateY(0);    /* End at original position */
             }
         }
-       
